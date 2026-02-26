@@ -13,6 +13,7 @@ class PostController extends Controller
 {
     public function showHomepage(ViewFactory $view_factory): View
     {
+
         /** @phpstan-ignore-next-line */
         $latest_post = Post::with(['categories'])
             ->latest() // created_at DESC
