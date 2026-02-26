@@ -7,7 +7,7 @@
         <div class="dash-head">
             <div>
                 <h2 class="corp-title">Kullanıcı Ekle</h2>
-                <p class="corp-sub">Yeni kullanıcı oluşturun ve rol atayın.</p>
+                <p class="corp-sub">Yeni kullanıcı oluşturun, rol ve şifre belirleyin.</p>
             </div>
 
             <div class="dash-actions">
@@ -55,7 +55,7 @@
                                     class="form-control @error('email') is-invalid @enderror"
                                     name="email"
                                     value="{{ old('email') }}"
-                                    placeholder="Örn: kullanıcı@site.com"
+                                    placeholder="Örn: kullanici@site.com"
                                     style="border-radius:12px; padding:.65rem .85rem;"
                                 >
                                 @error('email')
@@ -89,6 +89,51 @@
                                     @enderror
                             </div>
 
+                            {{-- PASSWORD --}}
+                            <div class="mb-3">
+                                <label class="form-label" style="font-weight:800;">Şifre</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" style="border-radius:12px 0 0 12px;">
+                                        <i class="bi bi-lock"></i>
+                                    </span>
+                                    <input
+                                        type="password"
+                                        class="form-control @error('password') is-invalid @enderror"
+                                        name="password"
+                                        placeholder="En az 8 karakter"
+                                        style="border-radius:0 12px 12px 0; padding:.65rem .85rem;"
+                                        autocomplete="new-password"
+                                    >
+                                </div>
+
+                                @error('password')
+                                <div class="invalid-feedback d-block" style="font-weight:700;">
+                                    {{ $message }}
+                                </div>
+                                @else
+                                    <div class="form-text" style="color:#64748b;">
+                                        Güvenli bir şifre belirleyin (en az 8 karakter).
+                                    </div>
+                                    @enderror
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" style="font-weight:800;">Şifre (Tekrar)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text" style="border-radius:12px 0 0 12px;">
+                                        <i class="bi bi-shield-lock"></i>
+                                    </span>
+                                    <input
+                                        type="password"
+                                        class="form-control"
+                                        name="password_confirmation"
+                                        placeholder="Şifreyi tekrar girin"
+                                        style="border-radius:0 12px 12px 0; padding:.65rem .85rem;"
+                                        autocomplete="new-password"
+                                    >
+                                </div>
+                            </div>
+
                             <div class="d-flex gap-2">
                                 <button type="submit"
                                         class="btn btn-primary"
@@ -115,7 +160,7 @@
                     <div class="corp-card__head">
                         <div>
                             <div style="font-weight:800; letter-spacing:-.01em;">İpucu</div>
-                            <div class="corp-sub">Rol güvenliği</div>
+                            <div class="corp-sub">Rol güvenliği & şifre</div>
                         </div>
                     </div>
 
@@ -125,7 +170,7 @@
                             <ul class="mt-2 mb-0" style="color:#64748b;">
                                 <li>Kurumsal e-posta kullanmayı tercih edin.</li>
                                 <li>Yönetici rolünü sınırlı sayıda kullanıcıya verin.</li>
-                                <li>Gereksiz yetki vermekten kaçının.</li>
+                                <li>Şifreyi güçlü belirleyin ve kullanıcıyla güvenli şekilde paylaşın.</li>
                             </ul>
                         </div>
                     </div>
