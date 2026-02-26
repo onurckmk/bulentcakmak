@@ -11,12 +11,13 @@
                             {{-- LEFT / BRAND --}}
                             <div class="col-12 col-lg-5 auth-side d-none d-lg-flex">
                                 <div class="auth-side__inner">
-                                    <div class="brand">
-                                        <div class="brand-mark">B</div>
-                                        <div>
-                                            <div class="brand-title">Blog Yönetim</div>
-                                            <div class="brand-sub">Kurumsal Panel</div>
-                                        </div>
+                                    <div class="side-logo-area">
+                                        <img
+                                            src="{{ asset('bulentcakmak_logo.png') }}"
+                                            alt="Bülent Çakmak"
+                                            class="side-logo-img"
+                                            loading="lazy"
+                                        >
                                     </div>
 
                                     <div class="side-copy mt-auto">
@@ -25,11 +26,7 @@
                                             İçerik, kullanıcı ve etiket yönetimini tek panelden yönetin.
                                         </div>
 
-                                        <div class="side-badges">
-                                            <span class="badge rounded-pill text-bg-light">Laravel</span>
-                                            <span class="badge rounded-pill text-bg-light">Admin</span>
-                                            <span class="badge rounded-pill text-bg-light">Secure</span>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -42,14 +39,7 @@
                                         <h2 class="auth-title">Giriş Yap</h2>
                                         <p class="auth-sub">Hesabınızla oturum açın.</p>
 
-                                        @guest
-                                            @if (Route::has('register'))
-                                                <a class="btn btn-sm btn-outline-secondary rounded-pill px-3 mt-2"
-                                                   href="{{ route('register') }}">
-                                                    Hesabın yok mu? Kayıt Ol <i class="bi bi-person-plus ms-1"></i>
-                                                </a>
-                                            @endif
-                                        @endguest
+
                                     </div>
 
                                     <form method="POST" action="{{ route('login') }}">
@@ -115,6 +105,11 @@
                                                 </a>
                                             @endif
                                         </div>
+
+                                        {!! NoCaptcha::display() !!}
+                                        @error('g-recaptcha-response')
+                                        <div class="invalid-feedback d-block">{{ $message }}</div>
+                                        @enderror
 
                                         {{-- SUBMIT --}}
                                         <div class="d-grid mt-4">
@@ -253,5 +248,43 @@
             border-top: 1px solid rgba(15,23,42,.08);
             padding-top: 14px;
         }
+
+        .brand-logo-wrap{
+            display:flex;
+            align-items:center;
+            min-width: 0;
+        }
+
+        .brand-logo{
+            height: 42px;        /* istersen 46-52 yaparız */
+            width: auto;
+            max-width: 220px;    /* taşmayı engeller */
+            object-fit: contain;
+            display:block;
+            filter: drop-shadow(0 14px 40px rgba(0,0,0,.35));
+        }
+
+
+        /* Kırmızı alanın olduğu bölgede logo alanı (çerçevesiz) */
+        .side-logo-area{
+            height: 240px;              /* alan yüksekliği: 220-280 arası oynatabilirsin */
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            margin: 10px 0 24px;
+        }
+
+        /* Logo: alanı dolduracak şekilde büyüt */
+        .side-logo-img{
+            height: 100%;
+            width: auto;
+            max-height: 240px;          /* side-logo-area ile aynı kalsın */
+            max-width: 92%;
+            object-fit: contain;
+            display:block;
+            filter: drop-shadow(0 18px 55px rgba(0,0,0,.45));
+        }
     </style>
 @endsection
+
+{!! NoCaptcha::renderJs('tr') !!}

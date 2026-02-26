@@ -62,40 +62,7 @@
                         <input type="text" placeholder="Ara: yazı, kategori, etiket...">
                     </div>
 
-                    @auth
-                        <div class="dropdown">
-                            <button class="nr-account dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="nr-avatar"><i class="bi bi-person-fill"></i></span>
-                                <span class="d-none d-sm-inline text-truncate" style="max-width:140px;">{{ Auth::user()->name }}</span>
-                            </button>
 
-                            <ul class="dropdown-menu dropdown-menu-end nr-dd shadow-sm">
-                                <li class="px-3 py-2">
-                                    <div class="fw-bold">{{ Auth::user()->name }}</div>
-                                    <div class="text-muted small text-truncate">{{ Auth::user()->email ?? '' }}</div>
-                                </li>
-                                <li><hr class="dropdown-divider my-1"></li>
-                                <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-2" href="{{ route('personal.main.index') }}">
-                                        <i class="bi bi-person"></i> Profil
-                                    </a>
-                                </li>
-                                <li><hr class="dropdown-divider my-1"></li>
-                                <li>
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-                                        <button type="submit" class="dropdown-item d-flex align-items-center gap-2 text-danger">
-                                            <i class="bi bi-box-arrow-right"></i> Çıkış Yap
-                                        </button>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    @else
-                        <a class="nr-login" href="{{ route('login') }}">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Giriş
-                        </a>
-                    @endauth
                 </div>
 
             </div>

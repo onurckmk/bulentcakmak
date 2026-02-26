@@ -6,8 +6,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "ext-intl": "*",
         "ext-gd": "*",
+        "ext-intl": "*",
+        "anhskohbo/no-captcha": "^3.7",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.10.0",
         "laravel/ui": "^4.5",
