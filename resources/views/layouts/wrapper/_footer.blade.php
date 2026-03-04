@@ -74,7 +74,7 @@
         <div class="footer-bottom">
             <div class="d-flex flex-column flex-md-row gap-2 justify-content-between align-items-center">
                 <div class="footer-copy">
-                    © {{ date('Y') }} <strong>BÜLENT ÇAKMAK - Finans Ve Kredilibilite Yönetimi sayfası - Eva Creatives
+                    © {{ date('Y') }} <strong>BÜLENT ÇAKMAK - Finans Ve Kredibilite Yönetimi sayfası - Eva Creatives
                         tarafından ❤️ ile tasarlanmıştır.</strong>. Tüm hakları saklıdır.
                 </div>
 
