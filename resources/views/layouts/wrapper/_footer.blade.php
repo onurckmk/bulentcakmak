@@ -53,7 +53,7 @@
 
                         <div class="social-grid">
 
-                            <a href="#" class="social-pill" aria-label="LinkedIn">
+                            <a href="https://www.linkedin.com/in/b%C3%BClent-%C3%A7akmak-8690123b5/" class="social-pill" aria-label="LinkedIn">
                                 <i class="bi bi-linkedin"></i>
                                 <span>LinkedIn</span>
                             </a>
