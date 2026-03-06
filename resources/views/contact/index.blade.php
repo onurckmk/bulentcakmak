@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="contact-card__body">
                                             <div class="contact-card__title">E-posta</div>
-                                            <div class="contact-card__value">bilgi@bulentcakmak.com</div>
+                                            <div class="contact-card__value">info@bulentcakmak.com</div>
                                             <div class="contact-card__hint">Mail göndermek için tıklayınız.</div>
                                         </div>
                                         <div class="contact-card__arrow" aria-hidden="true">
