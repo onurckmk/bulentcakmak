@@ -28,7 +28,7 @@
 
                                 {{-- EMAIL --}}
                                 <div class="col-12 col-md-6">
-                                    <a class="contact-card" href="mailto:mail@gmail.com">
+                                    <a class="contact-card" href="mailto:info@bulentcakmak.com">
                                         <div class="contact-card__icon">
                                             <i class="bi bi-envelope"></i>
                                         </div>
